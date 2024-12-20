@@ -5,6 +5,7 @@ import StarterKit from "@tiptap/starter-kit";
 import TaskList from "@tiptap/extension-task-list";
 import TaskItem from "@tiptap/extension-task-item";
 import Table from "@tiptap/extension-table";
+import Underline from "@tiptap/extension-underline";
 import TableHeader from "@tiptap/extension-table-header";
 import TableRow from "@tiptap/extension-table-row";
 import TableCell from "@tiptap/extension-table-cell";
@@ -17,6 +18,24 @@ const Editor = () => {
 
   const editor = useEditor({
     onCreate({ editor }) {
+      setEditor(editor);
+    },
+    onDestroy() {
+      setEditor(null);
+    },
+    onUpdate({ editor }) {
+      setEditor(editor);
+    },
+    onSelectionUpdate({ editor }) {
+      setEditor(editor);
+    },
+    onTransaction({ editor }) {
+      setEditor(editor);
+    },
+    onFocus({ editor }) {
+      setEditor(editor);
+    },
+    onBlur({ editor }) {
       setEditor(editor);
     },
     editorProps: {
@@ -34,6 +53,7 @@ const Editor = () => {
       TableCell,
       ImageResize,
       Image,
+      Underline,
       TaskItem.configure({
         nested: true,
       }),
