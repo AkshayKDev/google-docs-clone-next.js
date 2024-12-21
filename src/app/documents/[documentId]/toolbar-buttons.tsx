@@ -372,3 +372,9 @@ export const ListButton = () => {
     </DropdownMenu>
   );
 };
+
+export const FontSizeButton = () => {
+  const { editor } = useEditorStore();
+
+  return <div>Font Size</div>;
+};
