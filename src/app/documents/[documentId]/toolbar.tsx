@@ -16,7 +16,16 @@ import {
   UnderlineIcon,
   Undo2Icon,
 } from "lucide-react";
-import { FontFamilyButton, HeadingLevelButton, HighlightColorButton, LinkButton, TextColorButton } from "./toolbar-buttons";
+import {
+  AlignButton,
+  FontFamilyButton,
+  HeadingLevelButton,
+  HighlightColorButton,
+  ImageButton,
+  LinkButton,
+  ListButton,
+  TextColorButton,
+} from "./toolbar-buttons";
 
 interface ToolbarButtonProps {
   onClick?: () => void;
@@ -136,6 +145,9 @@ const Toolbar = () => {
       <HighlightColorButton />
       <Separator orientation="vertical" className="h-6 bg-neutral-300" />
       <LinkButton />
+      <ImageButton />
+      <AlignButton />
+      <ListButton />
       {sections[2].map((item) => (
         <ToolbarButton key={item.label} {...item} />
       ))}

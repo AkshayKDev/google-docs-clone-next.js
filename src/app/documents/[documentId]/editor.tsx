@@ -17,6 +17,7 @@ import { useEditorStore } from "../../../store/use-editor-store";
 import { Color } from "@tiptap/extension-color";
 import Highlight from "@tiptap/extension-highlight";
 import Link from "@tiptap/extension-link";
+import TextAlign from "@tiptap/extension-text-align";
 
 const Editor = () => {
   const { setEditor } = useEditorStore();
@@ -55,11 +56,14 @@ const Editor = () => {
       Link.configure({
         openOnClick: false,
         autolink: true,
-        defaultProtocol: "https"
+        defaultProtocol: "https",
       }),
       Table,
       TableHeader,
       TableRow,
+      TextAlign.configure({
+        types: ["heading", "paragraph"],
+      }),
       TableCell,
       ImageResize,
       Image,
