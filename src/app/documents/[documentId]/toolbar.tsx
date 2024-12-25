@@ -23,6 +23,7 @@ import {
   HeadingLevelButton,
   HighlightColorButton,
   ImageButton,
+  LineHeightButton,
   LinkButton,
   ListButton,
   TextColorButton,
@@ -149,6 +150,7 @@ const Toolbar = () => {
       <LinkButton />
       <ImageButton />
       <AlignButton />
+      <LineHeightButton />
       <ListButton />
       {sections[2].map((item) => (
         <ToolbarButton key={item.label} {...item} />

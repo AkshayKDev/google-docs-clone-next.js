@@ -20,11 +20,13 @@ import Link from "@tiptap/extension-link";
 import TextAlign from "@tiptap/extension-text-align";
 
 import { FontSizeExtension } from "@/extensions/font-size";
+import { LineHeightExtension } from "@/extensions/line-height";
 
 const Editor = () => {
   const { setEditor } = useEditorStore();
 
   const editor = useEditor({
+    immediatelyRender: false,
     onCreate({ editor }) {
       setEditor(editor);
     },
@@ -70,6 +72,10 @@ const Editor = () => {
       TableCell,
       ImageResize,
       Image,
+      LineHeightExtension.configure({
+        types: ["heading", "paragraph"],
+        defaultLineHeight: "normal",
+      }),
       FontFamily,
       Color,
       Highlight.configure({ multicolor: true }),
